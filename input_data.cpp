@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    string name, email, phone, education, experience, skills, hobbies;
+    string name, email, phone, education, experience, skills, hobbies, qualification;
 
     cout << "Enter your full name: ";
     getline(cin, name);
@@ -25,7 +25,9 @@ int main() {
 
     cout << "Enter your hobbies (comma-separated): ";
     getline(cin, hobbies);
-
+	
+	cout << "Enter your qualificcation: ";
+	getline(cin, qualification);
     // Write data to resume_data.txt, overwrite if it already exists
     ofstream file("resume_data.txt", ios::trunc);
     if (file.is_open()) {
@@ -35,7 +37,8 @@ int main() {
         file << education << endl;
         file << experience << endl;
         file << skills << endl;
-        file << hobbies << endl;  // New line for hobbies
+        file << hobbies << endl;
+		file << qualification << endl;  // New line for hobbies
         file.close();
         cout << "\n? Resume data saved to 'resume_data.txt'." << endl;
     } else {
